@@ -515,7 +515,7 @@ body {
                 return;
             }
 
-            fetch('https://mugishatumusifu.github.io/student-profiles/students.json')
+            fetch('https://studentsidentities.github.io/cards/students.json')
                 .then(response => response.json())
                 .then(data => {
                     const student = data.students.find(s => s.id === studentId);
