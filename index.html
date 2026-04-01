@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="icon" type="image/png" href="images/icon/icon.PNG">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f3962588 0%, #f99317a8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 950px;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-card {
+    background: rgba(255, 245, 230, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.2);
+    overflow: hidden;
+    width: 100%;
+    animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(255, 200, 100, 0.3);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(50px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.card-header {
+    background: linear-gradient(135deg, #ffb300 0%, #ff8c00 50%, #ff6f00 100%);
+    padding: 45px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.card-header h1 {
+    color: #2c1e00;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.card-header h1 span {
+    color: #fff8e1;
+}
+
+.card-body {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    background: #fff8e1;
+    position: relative;
+}
+
+.left-section {
+    background: linear-gradient(180deg, #ffb300 0%, #ff8c00 100%);
+    padding: 50px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff8e1;
+    position: relative;
+    overflow: hidden;
+}
+
+.left-section::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+}
+
+.profile-photo-container {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #fff8e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3), 0 0 0 8px rgba(255, 255, 255, 0.7);
+    animation: zoomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo-container:hover {
+    transform: scale(1.05);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0) rotate(-180deg); opacity: 0; }
+    to { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-photo-container svg {
+    width: 110px;
+    height: 110px;
+    fill: #ffffff;
+}
+
+.student-name {
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+    color: #fff8e1;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.student-role {
+    font-size: 1.2em;
+    font-weight: 500;
+    opacity: 0.95;
+    margin-bottom: 35px;
+    padding: 8px 20px;
+    background: rgba(255, 245, 230, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.edit-icon {
+    margin-top: auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px;
+    background: rgba(255, 245, 230, 0.2);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 1;
+}
+
+.edit-icon:hover {
+    transform: scale(1.2) rotate(15deg);
+    background: rgba(255, 245, 230, 0.3);
+}
+
+.edit-icon svg {
+    width: 40px;
+    height: 40px;
+    fill: #fff8e1;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.right-section {
+    padding: 50px;
+    background: linear-gradient(135deg, #fff8e1 0%, #fff0d4 100%);
+}
+
+.section-title {
+    font-size: 1.6em;
+    color: #2c1e00;
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid transparent;
+    background: linear-gradient(90deg, #ffb300, #ff8c00, #ff6f00) left bottom no-repeat;
+    background-size: 100% 3px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 45px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff8e1;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 179, 0, 0.1);
+}
+
+.info-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 179, 0, 0.3);
+    border-color: rgba(255, 179, 0, 0.3);
+}
+
+.info-label {
+    font-weight: 700;
+    color: #ff8c00;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    color: #2c1e00;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.projects-section {
+    margin-top: 35px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 179, 0, 0.1);
+}
+
+.social-links a {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffb300, #ff8c00);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 179, 0, 0.3);
+}
+
+.social-links a:hover {
+    transform: translateY(-8px) scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 179, 0, 0.5);
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff8e1;
+}
+
+.fallback-message {
+    display: none;
+    background: rgba(255, 245, 230, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 60px 50px;
+    border-radius: 25px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 1px solid rgba(255, 200, 100, 0.3);
+}
+
+.error-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 30px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a6f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 40px rgba(238, 90, 111, 0.4);
+    animation: pulse 2s ease-in-out infinite;
+    position: relative;
+}
+
+.error-icon::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 3px solid rgba(255, 107, 107, 0.3);
+    border-radius: 50%;
+    animation: ripple 2s ease-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes ripple {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.error-icon svg {
+    width: 60px;
+    height: 60px;
+    fill: #fff8e1;
+}
+
+.fallback-message h2 {
+    font-size: 2em;
+    color: #2c1e00;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.fallback-message p {
+    font-size: 1.1em;
+    color: #5c4b00;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.retry-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 35px;
+    background: linear-gradient(135deg, #ffb300, #ff8c00);
+    color: #fff8e1;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 179, 0, 0.3);
+}
+
+.retry-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 179, 0, 0.5);
+}
+
+.retry-button svg {
+    width: 20px;
+    height: 20px;
+    fill: #fff8e1;
+}
+
+@media (max-width: 768px) {
+    .card-body {
+        grid-template-columns: 1fr;
+    }
+    .left-section {
+        padding: 40px 25px;
+    }
+    .right-section {
+        padding: 40px 25px;
+    }
+    .info-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .card-header h1 {
+        font-size: 2em;
+    }
+    .fallback-message {
+        padding: 40px 30px;
+    }
+    .error-icon {
+        width: 100px;
+        height: 100px;
+    }
+    .error-icon svg {
+        width: 50px;
+        height: 50px;
+    }
+    .error-icon::before {
+        width: 110px;
+        height: 110px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="student-card" class="profile-card" style="display:none;">
+            <div class="card-header">
+                <h1>PROFILE <span style="color: white;">CARD</span></h1>
+            </div>
+            
+            <div class="card-body">
+                <div class="left-section">
+                    <div class="profile-photo-container">
+                        <img id="student-photo" src="" alt="Student Photo" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <svg viewBox="0 0 24 24" style="display:none;">
+                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                        </svg>
+                    </div>
+                    <div class="student-name" id="student-name"></div>
+                    <div class="student-role">Student</div>
+                    
+                </div>
+                
+                <div class="right-section">
+                    <h2 class="section-title">Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Registration No</div>
+                            <div class="info-value" id="student-id"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Gender</div>
+                            <div class="info-value" id="student-gender"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Class</div>
+                            <div class="info-value" id="student-class"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Academic Year</div>
+                            <div class="info-value">2025-2026</div>
+                        </div>
+                    </div>
+                    
+                    <div class="projects-section">
+                        <h2 class="section-title">Academic Status</h2>
+                        <div class="projects-grid">
+                            <div class="info-item">
+                                <div class="info-label">Status</div>
+                                <div class="info-value" id="student-status"></div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Active</div>
+                                <div class="info-value"><p style="color: white; background: Green; padding: 7px; border-radius: 15px; text-align: center;">Yes</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+
+        <div id="fallback-message" class="fallback-message">
+            <div class="error-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                </svg>
+            </div>
+            <h2>Student Not Found</h2>
+            <p>We couldn't find the student profile you're looking for. Please check the QR code or student ID and try again.</p>
+            <button class="retry-button" onclick="location.reload()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+                </svg>
+                Retry
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const studentId = urlParams.get('id');
+
+            if (!studentId) {
+                showFallback();
+                return;
+            }
+
+            fetch('https://mugishatumusifu.github.io/student-profiles/students.json')
+                .then(response => response.json())
+                .then(data => {
+                    const student = data.students.find(s => s.id === studentId);
+                    if (student) {
+                        displayStudent(student);
+                    } else {
+                        showFallback();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading students.json:', error);
+                    showFallback();
+                });
+        });
+
+        function displayStudent(student) {
+            const photoImg = document.getElementById('student-photo');
+            const photoSvg = photoImg.nextElementSibling;
+            
+            if (student.photo) {
+                photoImg.src = student.photo;
+                photoImg.style.display = 'block';
+                photoSvg.style.display = 'none';
+            } else {
+                photoImg.style.display = 'none';
+                photoSvg.style.display = 'block';
+            }
+            
+            document.getElementById('student-name').textContent = student.name;
+            document.getElementById('student-id').textContent = student.id;
+            document.getElementById('student-gender').textContent = student.gender;
+            document.getElementById('student-status').textContent = student.status;
+            document.getElementById('student-class').textContent = student.class;
+            document.getElementById('fallback-message').style.display = 'none';
+            document.getElementById('student-card').style.display = 'block';
+        }
+
+        function showFallback() {
+            document.getElementById('student-card').style.display = 'none';
+            document.getElementById('fallback-message').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
