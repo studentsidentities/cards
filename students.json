@@ -1,12 +1,12 @@
 {
   "students": [
     {
-      "id": "1027230713",
-      "name": "Ishimwe Jean Paul",
-      "gender": "Male",
-      "status": "Boarding",
-      "class": "L5 MMP B",
-      "photo": "images/Ishimwe_Jean_Paul_L5_MMP_B_1027230713_Apr_01_64922_AM.jpeg"
+      "id": "4334",
+      "name": "Byishimo Mine",
+      "gender": "",
+      "status": "",
+      "class": "L5 MMP",
+      "photo": "images/opt_1775809127013-22.jpg"
     }
   ]
 }
