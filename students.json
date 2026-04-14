@@ -3,16 +3,16 @@
     {
       "id": "4334",
       "name": "Byishimo Mine",
-      "gender": "",
-      "status": "",
+      "gender": "Female",
+      "status": "Boarding",
       "class": "L5 MMP",
       "photo": "images/opt_1775809127013-22.jpg"
     },
     {
       "id": "41414",
       "name": "Ishimwe Jean paul",
-      "gender": "",
-      "status": "",
+      "gender": "Male",
+      "status": "Boarding",
       "class": "L5 MMP",
       "photo": "images/opt_1775850135491-do.jpg"
     }
