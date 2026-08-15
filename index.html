@@ -257,6 +257,12 @@ body {
     font-weight: 600;
 }
 
+/* Lets #student-extra-fields sit inside .info-grid without breaking the
+   grid layout — its child .info-item elements become direct grid items. */
+.contents {
+    display: contents;
+}
+
 .projects-section {
     margin-top: 35px;
 }
@@ -467,6 +473,9 @@ body {
                             <div class="info-label">Academic Year</div>
                             <div class="info-value">2025-2026</div>
                         </div>
+                        <!-- Additional imported fields (e.g. Phone, Email, DOB, Address) are
+                             injected here dynamically by displayStudent()/renderExtraFields() -->
+                        <div id="student-extra-fields" class="contents"></div>
                     </div>
                     
                     <div class="projects-section">
@@ -549,8 +558,39 @@ body {
             document.getElementById('student-gender').textContent = student.gender;
             document.getElementById('student-status').textContent = student.status;
             document.getElementById('student-class').textContent = student.class;
+            renderExtraFields(student.extra);
             document.getElementById('fallback-message').style.display = 'none';
             document.getElementById('student-card').style.display = 'block';
+        }
+
+        // Renders any additional fields chosen during Excel import (e.g. Phone,
+        // Email, DOB, Address) that were not already shown by the fixed fields
+        // above. Existing information (name, id, gender, class, status) always
+        // stays exactly as it was — this only ever ADDS extra info-items.
+        function renderExtraFields(extra) {
+            const container = document.getElementById('student-extra-fields');
+            container.innerHTML = '';
+            if (!extra || typeof extra !== 'object') return;
+
+            Object.keys(extra).forEach(key => {
+                const value = extra[key];
+                if (value === undefined || value === null || value === '') return;
+
+                const item = document.createElement('div');
+                item.className = 'info-item';
+
+                const label = document.createElement('div');
+                label.className = 'info-label';
+                label.textContent = key;
+
+                const val = document.createElement('div');
+                val.className = 'info-value';
+                val.textContent = value;
+
+                item.appendChild(label);
+                item.appendChild(val);
+                container.appendChild(item);
+            });
         }
 
         function showFallback() {
