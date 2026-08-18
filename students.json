@@ -350,6 +350,19 @@
         "Personal Contact": "782802533",
         "email": "yuhimedard@gmail.com"
       }
+    },
+    {
+      "id": "KH0010028",
+      "name": "IZABAYO Jean Pierre",
+      "gender": "Male",
+      "status": "",
+      "class": "Curinary Arts",
+      "photo": "images/opt_1787054129773-28.jpg",
+      "extra": {
+        "ID": "1199680058873292",
+        "Email": "jeanpierriezabayo2024@gmail.com",
+        "phone number": "785973945"
+      }
     }
   ]
 }
