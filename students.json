@@ -699,13 +699,55 @@
       "gender": "M",
       "status": "",
       "class": "L5 FBO",
-      "photo": "images/opt_1790763394558-KH0020242-cropped.jpg",
+      "photo": "images/opt_1791373618708-KH0020242-cropped.jpg",
       "extra": {
         "no": "No. 49",
         "Personal email": "donnyimena@gmail.com",
         "parent contact": "0788850993",
         "personal contact": "0722111110",
         "Parent Names": "MUKURALINDA Alex"
+      }
+    },
+    {
+      "id": "KH0020243",
+      "name": "NKUBITO Prince Etoo",
+      "gender": "Male",
+      "status": "",
+      "class": "L5 TOR",
+      "photo": "images/opt_1791416959176-KH0020243-cropped.jpg",
+      "extra": {
+        "Personal contact": " 0796596567",
+        "ID": "1200580275905029",
+        "Email": "Ceoff96@gmail.com",
+        "Parent contact": "0785057676"
+      }
+    },
+    {
+      "id": "KH0020244",
+      "name": "Kugerwa Danie",
+      "gender": "Male",
+      "status": "",
+      "class": "L5 TOR",
+      "photo": "images/opt_1791417183849-KH0020244-cropped.jpg",
+      "extra": {
+        "Parent contacts": "0785447581",
+        "Email": ":kungerwadaniel60@gmail.com"
+      }
+    },
+    {
+      "id": "000",
+      "name": "JIMMY TUMWISIGE",
+      "gender": "Male",
+      "status": "",
+      "class": "CHEF COOK",
+      "photo": "images/opt_1791453112134-000-cropped.jpg",
+      "extra": {
+        "Email": "jimmytumwisige@gmail.com",
+        "Phone contact": "0788654946",
+        "Facebook": "@tumwisige_jimmy",
+        "Instagram": "jimmy_s_kitchen1",
+        "Youtube": "Jimmy Kitchen",
+        "All social media platforms": "~@tumwisige_jimmy\t~jimmy_s_kitchen1\t~@chefcookjimmy\t~Jimmy Kitchen\t"
       }
     }
   ]
