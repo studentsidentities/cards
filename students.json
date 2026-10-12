@@ -17,7 +17,7 @@
       "gender": "F",
       "status": "",
       "class": "L5 FBO",
-      "photo": "images/opt_1790769123951-KH0020195-cropped.jpg",
+      "photo": "images/opt_1791837926965-KH0020195-cropped.jpg",
       "extra": {
         "no": "No. 2",
         "Personal email": "inezagisele0@gmail.com",
@@ -748,6 +748,80 @@
         "Instagram": "jimmy_s_kitchen1",
         "Youtube": "Jimmy Kitchen",
         "All social media platforms": "~@tumwisige_jimmy\t~jimmy_s_kitchen1\t~@chefcookjimmy\t~Jimmy Kitchen\t"
+      }
+    },
+    {
+      "id": "KH0020245",
+      "name": "Visha ishimwe Mpambara",
+      "gender": "Male",
+      "status": "",
+      "class": "L4 TOR",
+      "photo": "images/opt_1791836383151-KH0020245-cropped.jpg",
+      "extra": {
+        "Parental contact": "0783767850",
+        "Mother Name": "Visha ishimwe Mpambara"
+      }
+    },
+    {
+      "id": "KH0020246",
+      "name": "uwase sylvanie",
+      "gender": "Male",
+      "status": "",
+      "class": "L5 FBO",
+      "photo": "images/opt_1791836423557-KH0020246-cropped.jpg",
+      "extra": {
+        "Parent contact": "0783700455",
+        "Parent name": " Mwiza Chantal"
+      }
+    },
+    {
+      "id": "KH0020247",
+      "name": "Habintwari Carmel",
+      "gender": "Male",
+      "status": "",
+      "class": "L1 CUA",
+      "photo": "images/opt_1791836453289-KH0020247-cropped.jpg",
+      "extra": {
+        "Phone contacts": "0795873080 ",
+        "Parent contact": "0787440861",
+        "Parent name": "Nyirantezimana Béatrice "
+      }
+    },
+    {
+      "id": "KH0020248",
+      "name": "Prince Habaguhirwa",
+      "gender": "Male",
+      "status": "",
+      "class": "L4 FBO",
+      "photo": "images/opt_1791836488002-KH0020248-cropped.jpg",
+      "extra": {
+        "Parent contact": " 0783939143",
+        "parent name": " mukamana donatha ",
+        "Email": " dollarwambere1@gmail.com"
+      }
+    },
+    {
+      "id": "KH0020249",
+      "name": "niyigena Ange",
+      "gender": "Female",
+      "status": "",
+      "class": "L4 FBO",
+      "photo": "images/opt_1791836534357-KH0020249-cropped.jpg",
+      "extra": {
+        "Parent contact": " 0736258346"
+      }
+    },
+    {
+      "id": "KH0020259",
+      "name": "Twagirayezu Prince",
+      "gender": "Male",
+      "status": "",
+      "class": "L5 FBO",
+      "photo": "images/opt_1791836556530-KH0020259-cropped.jpg",
+      "extra": {
+        "Personal contact": " 0794979559",
+        "Parent contact": " 0788752232 ",
+        "Parent name": "acklin Uwanyirigira"
       }
     }
   ]
